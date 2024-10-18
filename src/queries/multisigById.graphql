@@ -1,0 +1,12 @@
+query MultisigById($id: String!) {
+  accounts(where: { id_eq: $id, isMultisig_eq: true }) {
+    signatories(limit: 50) {
+      signatory {
+        id
+        address
+      }
+    }
+    threshold
+    id
+  }
+}
